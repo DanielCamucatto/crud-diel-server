@@ -1,0 +1,19 @@
+# GET http://localhost:3000/tasks
+# Content-Type: application/json
+
+# {
+#   "title": "Minha Tarefa",
+#   "description": "Descrição da tarefa",
+#   "date": "2023-09-25T16:00:00.000Z",
+#   "duration": 60
+# }
+
+PUT http://localhost:3000/tasks/6511d5ebf3f2b2967d6fa743
+Content-Type: application/json
+
+{
+  "title": "Novo Título",
+  "description": "Nova Descrição",
+  "date": "2023-09-26T16:00:00.000Z",
+  "duration": 120
+}
