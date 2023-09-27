@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, Param, Put, Delete, NotFoundException, BadRequestException } from '@nestjs/common';
 import { TasksService } from './tasks.service';
-import { Task } from './task.model'; // Certifique-se de que Task corresponda ao novo modelo
+import { Task } from './task.model';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 
@@ -21,13 +21,13 @@ export class TasksController {
     return this.tasksService.findOne(id);
   }
 
-  @Post() // Esta rota lidará com solicitações POST em http://localhost:3000/tasks
-  async create(@Body() task: Omit<Task, 'id'>): Promise<Task> { // Remova o campo 'id' do tipo Task
+  @Post() 
+  async create(@Body() task: Omit<Task, 'id'>): Promise<Task> { 
     return this.tasksService.create(task);
   }
 
   @Put(':id')
-  async update(@Param('id') id: string, @Body() task: Omit<Task, 'id'>): Promise<Task> { // Remova o campo 'id' do tipo Task
+  async update(@Param('id') id: string, @Body() task: Omit<Task, 'id'>): Promise<Task> { 
     if (!/^[0-9a-fA-F]{24}$/.test(id)) {
       throw new BadRequestException('Invalid ID format');
     }

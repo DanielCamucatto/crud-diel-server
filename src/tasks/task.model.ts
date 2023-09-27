@@ -1,5 +1,3 @@
-// Arquivo: src/tasks/task.model.ts
-
 import { Document, Schema } from 'mongoose';
 
 export interface Task extends Document {
